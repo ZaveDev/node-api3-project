@@ -1,27 +1,30 @@
 const express = require('express');
 
+const postDb = require('./postDb')
+
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  // do your magic!
+router.get('/', validatePostId, (req, res) => {
+   res.status(200).json({ iAm: "Working"})
 });
 
 router.get('/:id', (req, res) => {
-  // do your magic!
+   res.status(200).json({ iAm: "Working"})
 });
 
 router.delete('/:id', (req, res) => {
-  // do your magic!
+   res.status(200).json({ iAm: "Working"})
 });
 
 router.put('/:id', (req, res) => {
-  // do your magic!
+   res.status(200).json({ iAm: "Working"})
 });
 
 // custom middleware
 
 function validatePostId(req, res, next) {
-  // do your magic!
+   console.log("Middle Ware hit")
+   next()
 }
 
 module.exports = router;
